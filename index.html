@@ -30,34 +30,7 @@
    <script type="text/javascript" src="jquery.loadTemplate-1.4.4.js"></script>
 
    <!-- Main js file -->
-
-
-    <!-- Fetch data js file -->
-  <script type="text/javascript" src="js/fetch_data.js" ></script>
-
-
-  <?php
-
-  $con=mysqli_connect('Localhost', 'root', 'ssfb1992','bluebus');
-  mysqli_select_db("holdeplasser",$con);
-
-  if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
-
-  $id = $_GET['id'];
-  $sql = "SELECT * FROM holdeplasser where id= $id";
-  $result = mysqli_query($con, $sql);
-  $row = mysqli_fetch_array($result);
-  ?>
-  <script>
-
-
-
-  var holdeplass = <?php echo json_encode($row["id"]); ?>
-
-  </script>
-
+   <script type="text/javascript" src="fetch_data.js" ></script>
 
 
 </head>
